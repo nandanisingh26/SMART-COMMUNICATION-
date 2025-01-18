@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Artisan Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <h1>VaranasiVibes Dashboard</h1>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="register.html">Join Us</a></li>
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dashboard Main Content -->
+  <main id="dashboard-main">
+    <section id="dashboard-overview">
+      <div class="container">
+      
+        <h2>Welcome, [Artisan Name]!</h2>
+        <p>Your dashboard provides an overview of your progress and key metrics.</p>
+
+        <!-- Dashboard Stats -->
+        <div class="dashboard-stats">
+          <div class="stat-card">
+            <h3>Total Sales</h3>
+            <p>$2,500</p>
+          </div>
+          <div class="stat-card">
+            <h3>Rank</h3>
+            <p>5th among artisans</p>
+          </div>
+          <div class="stat-card">
+            <h3>Total Earnings</h3>
+            <p>$1,800</p>
+          </div>
+          <div class="stat-card">
+            <h3>Product Views</h3>
+            <p>1,250 views</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manage Products and Events -->
+    <section id="manage-section">
+      <div class="container">
+        <h2>Manage Your Craft</h2>
+        <div class="dashboard-actions">
+          <div class="action-card">
+            <h3>Manage Products</h3>
+            <p>View, edit, and add your products to the marketplace.</p>
+            <button onclick="window.location.href='manage-products.html'">Go to Products</button>
+          </div>
+          <div class="action-card">
+            <h3>Create/Join Events</h3>
+            <p>Collaborate with other artisans by creating or joining events.</p>
+            <button onclick="window.location.href='events.html'">Go to Events</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Artisan Marketplace. All Rights Reserved.</p>
+      <p>Follow us on:
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a> | 
+        <a href="#">Twitter</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

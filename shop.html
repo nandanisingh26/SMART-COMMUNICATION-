@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - VaranasiVibes</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Floating banner styles */
+    .floating-banner {
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        border-radius: 15px;
+        padding: 15px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-family: Arial, sans-serif;
+        z-index: 1000;
+    }
+
+    .floating-banner button {
+        background-color: #721c24;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .floating-banner button:hover {
+        background-color: #a94442;
+    }
+
+    /* Add some padding for the shop content */
+    body {
+        padding-bottom: 60px; /* Ensure banner doesn't overlap with the page content */
+    }
+</style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="logo">VaranasiVibes</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="women.html">Women's Wear</a>
+      <a href="men.html">Men's Wear</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-logo">
+      <img src="./assets/images/logo.png" alt="VaranasiVibes Logo">
+    </div>
+    <h1>Welcome to Our Shop</h1>
+    <p>Explore handcrafted products from various categories made by skilled artisans.</p>
+  </div>
+   <!-- Floating banner -->
+   <div class="floating-banner" id="floatingBanner">
+    Use code <strong>VARVIBES</strong> to get an extra 10% off on your total purchase!
+    <button onclick="closeBanner()">Got it</button>
+</div>
+
+  <!-- Shop Categories Section -->
+  <section class="categories-section">
+    <div class="categories-container">
+      <div class="category-item">
+        <a href="women.html">
+          <img src="./assets/images/womenwear.jpg" alt="Women Wear">
+          <h3>Women's Wear</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="men.html">
+          <img src="./assets/images/menwear.jpg" alt="Men's Wear">
+          <h3>Men's Wear</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="kids.html">
+          <img src="./assets/images/kids.jpg" alt="Kids">
+          <h3>Kids</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="homedecor.html">
+          <img src="./assets/images/homedecor.jpg" alt="Home Decor">
+          <h3>Home Decor</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="kitchen.html">
+          <img src="./assets/images/kitchen.jpg" alt="Kitchen">
+          <h3>Kitchen</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="accessories1.html">
+          <img src="./assets/images/accessories.jpg" alt="Accessories">
+          <h3>Accessories</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="footwear1.html">
+          <img src="./assets/images/footwear.jpg" alt="Footwear">
+          <h3>Footwear</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="jewelry.html">
+          <img src="./assets/images/jewellery.jpg" alt="Jewelry">
+          <h3>Jewelry</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="appliances.html">
+          <img src="./assets/images/appliances.jpg" alt="Home Appliances">
+          <h3>Home Appliances</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="toys.html">
+          <img src="./assets/images/toys.jpg" alt="Toys">
+          <h3>Toys</h3>
+        </a>
+      </div>
+      <div class="category-item">
+        <a href="books.html">
+          <img src="./assets/images/books.jpg" alt="Books">
+          <h3>Books</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+  <script>
+    // JavaScript to handle the close button
+    function closeBanner() {
+        const banner = document.getElementById('floatingBanner');
+        banner.style.display = 'none';
+    }
+</script>
+
+  <script src="script.js"></script>
+  <script src="cart.js"></script>
+
+
+</body>
+</html>

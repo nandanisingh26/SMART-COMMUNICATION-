@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saree - Women Wear | VaranasiVibes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="logo">VaranasiVibes</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="women.html">Women's Wear</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Saree Collection</h1>
+    <p>Explore our exquisite range of handcrafted sarees made by skilled artisans.</p>
+  </div>
+
+  <!-- Saree Products Section -->
+  <section class="product-list">
+    <!-- Repeat this block for each saree (15 sarees) -->
+    <div class="product-item">
+      <img src="./assets/images/traditional saree.jpg" alt="Saree 1">
+      <h3>Traditional Saree</h3>
+      <p>Price: Rs.800</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Handwoven Saree.jpg" alt="Saree 2">
+      <h3>Handwoven Saree</h3>
+      <p>Price: Rs.1200</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/silk-saree.jpg" alt="Saree 3">
+      <h3>Silk Saree</h3>
+      <p>Price: Rs.1500</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Embroidered Saree.jpg" alt="Saree 4">
+      <h3>Embroidered Saree</h3>
+      <p>Price: Rs.999</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Bridal-saree.jpg" alt="Saree 5">
+      <h3>Bridal Saree</h3>
+      <p>Price: Rs.6999</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Casual-Saree.jpg" alt="Saree 6">
+      <h3>Casual Saree</h3>
+      <p>Price: Rs.500</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Wedding-Saree.jpg" alt="Saree 7">
+      <h3>Wedding Saree</h3>
+      <p>Price: Rs.1400</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Partywear-saree.jpg" alt="Saree 8">
+      <h3>Party Wear Saree</h3>
+      <p>Price: Rs.850</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="assets/images/Chiffon-saree.jpg" alt="Saree 9">
+      <h3>Chiffon Saree</h3>
+      <p>Price: Rs.300</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="assets/images/Cotton-saree.jpg" alt="Saree 10">
+      <h3>Cotton Saree</h3>
+      <p>Price: Rs.400</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/printed-saree.jpg" alt="Saree 11">
+      <h3>Printed Saree</h3>
+      <p>Price: Rs.200</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Linen-saree.jpg" alt="Saree 12">
+      <h3>Linen Saree</h3>
+      <p>Price: Rs.700</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Georgette-saree.jpg" alt="Saree 13">
+      <h3>Georgette Saree</h3>
+      <p>Price: Rs.500</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Designer-saree.jpg" alt="Saree 14">
+      <h3>Designer Saree</h3>
+      <p>Price: Rs.2200</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-item">
+      <img src="./assets/images/Luxury-saree.jpg" alt="Saree 15">
+      <h3>Luxury Saree</h3>
+      <p>Price: Rs.3000</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+  </footer>
+  <script src="script.js">
+   
+
+    // Add to Cart Functionality
+    const addToCartButtons = document.querySelectorAll('.btn');
+  
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        const productName = event.target.parentElement.querySelector('h3').innerText;
+        const productPrice = event.target.parentElement.querySelector('p').innerText;
+        alert(`${productName} has been added to your cart!`);
+        // You can further enhance this by adding the product to a cart array, updating the UI, etc.
+      });
+    });
+  </script>
+  <script src="cart.js"></script>
+
+  
+
+</body>
+</html>

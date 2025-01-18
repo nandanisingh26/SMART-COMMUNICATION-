@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #bd9cbde7;
+            
+        }
+        .thank-you-container {
+            margin: 50px auto;
+            max-width: 600px;
+            border: 2px solid #530c53e7;
+            border-radius: 8px;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+        .thank-you-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .success-message {
+            color: #600d55;
+            font-size: 2.4em;
+            margin: 20px 0;
+        }
+        .order-details {
+            margin: 20px 0;
+            font-size: 1.5em;
+            text-align: left;
+        }
+        .return-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #7f1461;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .return-button:hover {
+            background-color: #45a049;
+        }
+        /* Sparkling hearts styling */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 80%, 15% 100%, 0% 35%);
+            opacity: 0;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+        @keyframes sparkle {
+            0% {
+                transform: scale(0.5) translate(-50%, -50%);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2) translate(-50%, -50%);
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(0.8) translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="success-message">🎉 Order Placed Successfully! 🎉</div>
+        <p>Your order will be delivered via Cash on Delivery.</p>
+        <div class="order-details">
+            <p><strong>Delivery Address:</strong> <span id="delivery-address"></span></p>
+            <p><strong>Payment Method:</strong> <span id="payment-method"></span></p>
+        </div>
+        <div class="thank-you-image">
+            <img src="assets/images/thnkyou.png" alt="Thank You">
+        </div>
+        <p>Thank you for ordering with us!</p>
+         <!-- Return to Shop Button -->
+         <a href="shop.html" class="return-button">Return to Shop</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve the order details from localStorage
+            const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+
+            // Display the order details on the page
+            if (orderDetails) {
+                document.getElementById('delivery-address').textContent = orderDetails.address || 'Not provided';
+                document.getElementById('payment-method').textContent = orderDetails.paymentMethod || 'Not selected';
+            }
+             // Create sparkling hearts
+             const createHeart = () => {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                document.body.appendChild(heart);
+
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+
+                heart.style.left = `${x}px`;
+                heart.style.top = `${y}px`;
+
+                const animationDuration = Math.random() * 2 + 1; // 1 to 3 seconds
+                heart.style.animationDuration = `${animationDuration}s`;
+                // Remove the heart after animation ends
+                setTimeout(() => {
+                    heart.remove();
+                }, animationDuration * 1000);
+            };
+
+            // Generate hearts periodically
+            setInterval(createHeart, 300); // Creates a heart every 300ms
+            
+        });
+    </script>
+</body>
+</html>
