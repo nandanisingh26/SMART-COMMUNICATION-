@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    
+        /* Embedded CSS for the cart */
+        .cart-container {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+            max-width: 400px;
+        }
+
+        .cart-item {
+            margin-bottom: 10px;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: right;
+        }
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .cart-item img {
+      width: 100px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .cart-item h3, .cart-item p {
+      margin: 0;
+    }
+    .remove-btn {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background-color: #c0392b;
+    }
+    
+    .cart-total {
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        .checkout-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .checkout-message {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 5px;
+            background: #eaffea;
+        }
+        .checkout-button {
+    display: inline-block;
+    background-color: #4b2a69; /* Deep purple for a professional look */
+    color: #9eeac4; /* White text for contrast */
+    border: none;
+    padding: 12px 24px; /* Space around the button */
+    font-size: 16px; /* Slightly larger font for visibility */
+    font-weight: bold;
+    text-transform: uppercase; /* Makes the text all caps */
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+  }
+
+  .checkout-button:hover {
+    background-color: #68238c; /* Slightly darker purple on hover */
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  }
+
+  .checkout-button:active {
+    transform: scale(1); /* Returns to normal size on click */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Less shadow on click */
+  }
+  .remove-item {
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+
+    .remove-item:hover {
+        background-color: darkred;
+    }
+    .checkout-message {
+        display: none;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        margin-top: 30px;
+        border: 1px solid #ddd;
+    }
+
+    .checkout-message h3 {
+        margin: 0;
+        font-size: 1.5em;
+    }
+
+    .checkout-message p {
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+    .discount-section {
+      margin: 20px 0;
+    }
+
+    .discount-input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .apply-discount-btn {
+      padding: 8px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .apply-discount-btn:hover {
+      background-color: #45a049;
+    }
+    /* Floating banner styles */
+    .floating-banner {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+        }
+
+        .floating-banner button {
+            background-color: #721c24;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .floating-banner button:hover {
+            background-color: #a94442;
+        }
+
+        /* Add some padding for the shop content */
+        body {
+            padding-bottom: 60px; /* Ensure banner doesn't overlap with the page content */
+        }
+
+
+  </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Artisan Store</div>
+        <nav class="navbar">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="women.html">Women Wear</a>
+          <a href="men.html">Men's Wear</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+      </header>
+      
+  <div class="container">
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <div class="discount-section">
+      <input type="text" id="discount-code" class="discount-input" placeholder="Enter discount code">
+      <button id="apply-discount" class="apply-discount-btn">Apply Code</button>
+    </div>
+    <!-- Floating banner -->
+    <div class="floating-banner" id="floatingBanner">
+      Use code <strong>VARVIBES</strong> to get an extra 10% off on your total purchase!
+      <button onclick="closeBanner()">Got it</button>
+  </div>
+  
+  </div>
+  <main>
+    <div class="cart-container"></div>
+    <div class="checkout-section">
+      <button class="checkout-button" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+
+
+    </div>
+    <div id="checkout-message" class="checkout-message" style="display: none;"></div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      updateCartDisplay();
+  });
+
+  // Cart array to hold products
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let discountApplied = false; // Track if discount code is applied
+
+  // Function to update cart display
+  function updateCartDisplay() {
+      const cartContainer = document.querySelector('.cart-container');
+      if (!cartContainer) return;
+
+      // Clear previous cart contents
+      cartContainer.innerHTML = '';
+
+      if (cart.length === 0) {
+          cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+          return;
+      }
+
+      // Create cart items list
+      cart.forEach((item, index) => {
+          const productDiscountedPrice = item.price * 0.9; // Initial 10% product discount
+          const cartItem = document.createElement('div');
+          cartItem.classList.add('cart-item');
+          cartItem.innerHTML = `
+              <p>${item.name} - Original Price: ₹${item.price.toFixed(2)}, Discounted Price: ₹${productDiscountedPrice.toFixed(2)}</p>
+              <p>Quantity: ${item.quantity}</p>
+              <button class="remove-item" data-index="${index}">- Remove</button>
+          `;
+          cartContainer.appendChild(cartItem);
+      });
+
+      // Calculate subtotal, GST, and total
+      let subtotal = cart.reduce((total, item) => total + item.price * 0.9 * item.quantity, 0); // Subtotal after product discount
+      const gst = subtotal * 0.18; // 18% GST
+      let totalPrice = subtotal + gst;
+
+      // Apply additional discount if code applied
+      let additionalDiscount = 0;
+      if (discountApplied) {
+          additionalDiscount = totalPrice * 0.1; // Additional 10% discount on total price
+          totalPrice -= additionalDiscount;
+      }
+
+      const totalElement = document.createElement('div');
+      totalElement.classList.add('cart-total');
+      totalElement.innerHTML = `
+          <p>Subtotal (after product discount): ₹${subtotal.toFixed(2)}</p>
+          <p>GST (18%): ₹${gst.toFixed(2)}</p>
+          ${discountApplied ? `<p>Additional Discount (Code Applied): -₹${additionalDiscount.toFixed(2)}</p>` : ''}
+          <p><strong>Total: ₹${totalPrice.toFixed(2)}</strong></p>
+          
+      `;
+      cartContainer.appendChild(totalElement);
+
+      // Add event listener for remove buttons
+      const removeButtons = document.querySelectorAll('.remove-item');
+      removeButtons.forEach(button => {
+          button.addEventListener('click', (e) => {
+              const index = e.target.getAttribute('data-index');
+              removeFromCart(index);
+          });
+      });
+
+      // Add event listener for discount code
+      document.getElementById('apply-discount').addEventListener('click', applyDiscountCode);
+  }
+
+  // Function to remove an item from the cart
+  function removeFromCart(index) {
+      cart.splice(index, 1); // Remove item from array
+      localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+      updateCartDisplay(); // Refresh cart display
+  }
+
+  // Function to apply discount code
+  function applyDiscountCode() {
+      const discountCode = document.getElementById('discount-code').value.trim();
+      if (discountCode === 'VARVIBES') {
+          if (!discountApplied) {
+              discountApplied = true;
+              alert('Discount code applied! You received an additional 10% discount.');
+              updateCartDisplay(); // Update display to reflect new prices
+          } else {
+              alert('Discount code already applied.');
+          }
+      } else {
+          alert('Invalid discount code. Please try again.');
+      }
+  }
+
+  // Handle checkout button
+  const checkoutButton = document.querySelector('.checkout-button');
+  if (checkoutButton) {
+      checkoutButton.addEventListener('click', () => {
+          if (cart.length === 0) {
+              alert('Your cart is empty. Add items before proceeding to checkout.');
+              return;
+          }
+
+          // Calculate subtotal and GST
+          let subtotal = cart.reduce((total, item) => total + item.price * 0.9 * item.quantity, 0);
+          const gst = subtotal * 0.18;
+          let totalAmount = subtotal + gst;
+
+          // Apply additional discount if code is applied
+          if (discountApplied) {
+              totalAmount *= 0.9;
+          }
+
+          // Save total amount to localStorage
+          localStorage.setItem('totalAmount', totalAmount.toFixed(2));
+
+          // Redirect to checkout
+          alert('Redirecting to checkout page...');
+          window.location.href = 'checkout.html';
+      });
+  }
+</script>
+<script>
+  // JavaScript to handle the close button
+  function closeBanner() {
+      const banner = document.getElementById('floatingBanner');
+      banner.style.display = 'none';
+  }
+</script>
+
+
+  <script src="cart.js"></script>
+
+</body>
+</html>

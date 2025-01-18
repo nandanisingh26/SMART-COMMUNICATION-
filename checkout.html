@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .checkout-container {
+            max-width: 500px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment-methods {
+            margin-bottom: 15px;
+        }
+
+        .delivery-date {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: green;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Artisan Store</div>
+        <nav class="navbar">
+          <a href="index.html">Home</a>
+          
+          <a href="shop.html">Shop</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+      </header>
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        <form id="checkout-form">
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+                <label>Select Payment Method:</label>
+                <label>
+                    <input type="radio" name="payment-method" value="cod" checked>
+                    Cash on Delivery
+                </label>
+            </div>
+             <!-- Total Amount -->
+             <div class="total-amount" id="total-amount">
+                Total Amount to Pay: <span id="amount"></span>
+            </div>
+
+            <!-- Delivery Address -->
+            <div>
+                <label for="address">Enter Delivery Address:</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your delivery address" required></textarea>
+            </div>
+
+            <!-- Expected Delivery Date -->
+            <div class="delivery-date" id="delivery-date">
+                Expected Delivery Date: <span id="expected-date"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-button">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Calculate and display the expected delivery date (3 days from today)
+            const displayDeliveryDate = () => {
+                const today = new Date();
+                const deliveryDate = new Date(today);
+                deliveryDate.setDate(today.getDate() + 3); // Add 3 days
+    
+                // Format the date as 'Month Day, Year'
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                const formattedDate = deliveryDate.toLocaleDateString(undefined, options);
+    
+                // Display the formatted date in the element with ID 'expected-date'
+                const dateElement = document.getElementById('expected-date');
+                if (dateElement) {
+                    dateElement.textContent = formattedDate;
+                }
+            };
+    
+            // Handle form submission
+            const handleFormSubmission = () => {
+                const checkoutForm = document.getElementById('checkout-form');
+                if (!checkoutForm) return;
+    
+                checkoutForm.addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent the default form submission
+    
+                    // Get user inputs for address and payment method
+                    const address = document.getElementById('address')?.value || 'No address provided';
+                    const paymentMethod = document.querySelector('input[name="payment-method"]:checked')?.value || 'Not selected';
+    
+                    // Save the details to localStorage for displaying on the thank-you page
+                    localStorage.setItem('orderDetails', JSON.stringify({
+                        address,
+                        paymentMethod
+                    }));
+    
+                    // Redirect to the thank-you page
+                    window.location.href = 'thankyou.html';
+                });
+            };
+    
+            // Initialize functions
+            displayDeliveryDate();
+            handleFormSubmission();
+        });
+    </script>
+    
+</body>
+</html>

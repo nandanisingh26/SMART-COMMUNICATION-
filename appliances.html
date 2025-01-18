@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Applications</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Specific CSS for home applications page */
+    body.home-applications {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 20px;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px 0;
+    }
+    header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+    .product-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product-card h3 {
+      margin: 15px 0;
+      font-size: 1.25rem;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      color: #888;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .add-to-cart {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1>Home Applications</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <div class="container">
+      <h2>Our Top Picks for Your Home</h2>
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <img src="images/air-purifier.jpg" alt="Air Purifier">
+          <h3>Air Purifier</h3>
+          <p>₹8,500</p>
+          <button>Add to Cart</button>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+          <img src="images/vacuum-cleaner.jpg" alt="Vacuum Cleaner">
+          <h3>Vacuum Cleaner</h3>
+          <p>₹12,000</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <img src="images/blender.jpg" alt="Blender">
+          <h3>Blender</h3>
+          <p>₹3,500</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <img src="images/microwave.jpg" alt="Microwave Oven">
+          <h3>Microwave Oven</h3>
+          <p>₹15,000</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+          <img src="images/dishwasher.jpg" alt="Dishwasher">
+          <h3>Dishwasher</h3>
+          <p>₹30,000</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+          <img src="images/iron.jpg" alt="Steam Iron">
+          <h3>Steam Iron</h3>
+          <p>₹2,500</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+          <img src="images/toaster.jpg" alt="Toaster">
+          <h3>Toaster</h3>
+          <p>₹1,800</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card">
+          <img src="images/air-conditioner.jpg" alt="Air Conditioner">
+          <h3>Air Conditioner</h3>
+          <p>₹45,000</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="product-card">
+          <img src="images/heater.jpg" alt="Room Heater">
+          <h3>Room Heater</h3>
+          <p>₹4,200</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="product-card">
+          <img src="images/coffee-maker.jpg" alt="Coffee Maker">
+          <h3>Coffee Maker</h3>
+          <p>₹5,000</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Artisan Marketplace. All Rights Reserved.</p>
+  </footer>
+  <script src="cart.js"></script>
+
+</body>
+</html>
