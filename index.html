@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VaranasiVibes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+   <!-- Header Section -->
+   <header class="header">
+    <div class="logo">VaranasiVibes
+    
+    </div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="register.html">Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="events.html">Events</a>
+      <a href="women.html">Women Wear</a>
+      <a href="men.html">Men Wear</a> <!-- Link to Women Wear -->
+      <a href="contact.html">Contact Us</a>
+      <a href="login.html">Login</a>
+      <li><a href="cart.html">Cart</a></li>
+
+    </nav>
+  </header>
+  
+  <!-- Hero Section -->
+  <!-- Photo and Description Section -->
+  <section class="photo-description-section">
+    <div class="photo-container">
+      <img src="assets/images/logo.png" alt="Artisan Craft" class="photo">
+    </div>
+    <div class="description-container">
+      <h2>Exquisite Artisan Craft</h2>
+      <p>
+        Experience the rich heritage and intricate artistry of handmade crafts. This piece embodies the skill, creativity, and dedication of artisans who transform raw materials into timeless treasures.
+        From the delicate patterns to the vibrant colors, every detail tells a story of tradition and passion. Add a touch of authenticity to your life with this masterpiece.
+      </p>
+    </div>
+  </section>
+
+<!-- Slider Section -->
+<section class="slider">
+  <div class="slider-container">
+    <button class="arrow arrow-left" onclick="prevPhoto()">&#10094;</button>
+    <div class="image-section">
+      <img id="photo" src="./assets/images/homemade pottery.jpg" alt="Photo 1" class="photo">
+    </div>
+    <div class="description-section">
+      <h2 id="photo-title">Handmade Pottery</h2>
+      <p id="photo-description">Handmade pottery is an exquisite craft that showcases the perfect blend of tradition, artistry, and functionality. Each piece is carefully shaped by skilled artisans who breathe life into clay, using techniques passed down through generations. From the spinning potter’s wheel to intricate hand carvings, every stage reflects dedication and creativity. The natural imperfections in handmade pottery add a unique charm, ensuring no two pieces are exactly alike. These creations not only serve practical purposes but also carry the cultural heritage of the region they originate from. Whether it’s a delicately crafted vase, a sturdy cooking pot, or an ornamental item, handmade pottery brings warmth, authenticity, and timeless beauty to homes and spaces.</p>
+    </div>
+    <button class="arrow arrow-right" onclick="nextPhoto()">&#10095;</button>
+  </div>
+</section>
+
+<script>
+  const photos = [
+    {
+      src: "./assets/images/homemade pottery.jpg",
+      title: "Handmade Pottery",
+      description: "Handmade pottery is an exquisite craft that showcases the perfect blend of tradition, artistry, and functionality. Each piece is carefully shaped by skilled artisans who breathe life into clay, using techniques passed down through generations. From the spinning potter’s wheel to intricate hand carvings, every stage reflects dedication and creativity. The natural imperfections in handmade pottery add a unique charm, ensuring no two pieces are exactly alike. These creations not only serve practical purposes but also carry the cultural heritage of the region they originate from. Whether it’s a delicately crafted vase, a sturdy cooking pot, or an ornamental item, handmade pottery brings warmth, authenticity, and timeless beauty to homes and spaces."
+    },
+    {
+      src: "./assets/images/traditional textiles.jpg",
+      title: "Traditional Textiles",
+      description: "Traditional textiles are a rich reflection of cultural heritage, craftsmanship, and the stories of generations. Made from natural fibers such as cotton, silk, and wool, these fabrics are often woven, dyed, and embroidered by hand, with techniques that vary by region and tradition. Each piece of traditional textile carries its own symbolism, patterns, and colors, often representing the history, rituals, and values of the community. The meticulous processes involved in creating these textiles, such as hand-spinning, dyeing with natural pigments, and weaving on ancient looms, make them unique works of art. Whether it's a vibrant sari from India, a handwoven tapestry from Peru, or a soft, intricate shawl from the Middle East, traditional textiles are not just materials, but cultural treasures that hold deep meaning and timeless beauty."
+    },
+    {
+      src: "./assets/images/wooden crafts.jpg",
+      title: "Wooden Crafts",
+      description: "Wooden crafts are a timeless form of art that showcases the intricate beauty and versatility of wood as a medium. Skilled artisans transform raw timber into finely crafted items, blending traditional techniques with creative expression. These crafts can range from functional pieces like furniture and utensils to decorative works such as sculptures, toys, and ornaments. The craftsmanship involved in wooden crafts requires great precision, with each cut and carve enhancing the natural grain and texture of the wood. Often handcrafted using tools passed down through generations, these creations reflect cultural significance and a deep respect for nature. Whether it's a finely carved wooden mask, a hand-painted figurine, or a beautifully detailed furniture piece, wooden crafts offer a unique connection to the natural world and provide warmth, durability, and elegance to any space."
+    }
+  ];
+
+  let currentIndex = 0;
+  const totalImages = photos.length;
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  const images = document.querySelectorAll('.slider-image'); // Get all images
+
+
+  // Function to update the photo details
+  function updatePhoto() {
+    const photo = photos[currentIndex];
+    document.getElementById('photo').src = photo.src;
+    document.getElementById('photo-title').textContent = photo.title;
+    document.getElementById('photo-description').textContent = photo.description;
+    const angle = -360 / totalImages * currentIndex; // Calculate rotation angle for cylindrical effect
+    sliderWrapper.style.transform = `rotateY(${angle}deg)`;
+  }
+
+  // Function to move to the previous photo
+  function prevPhoto() {
+    currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+    updatePhoto();
+  }
+
+  // Function to move to the next photo
+  function nextPhoto() {
+    currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+    updatePhoto();
+  }
+
+  // Initialize the slider with the first photo
+  updatePhoto();
+
+  // Event listeners for the navigation buttons
+  document.querySelector('.prev').addEventListener('click', prevPhoto);
+  document.querySelector('.next').addEventListener('click', nextPhoto);
+</script>
+
+    <section id="features">
+      <div class="feature">
+        <h2>Join Us!</h2>
+        <p>Artisans can register on our platform to showcase their talent and sell their products online.</p>
+        <a href="register.html" class="btn">Register Now</a>
+      </div>
+      <div class="feature">
+        <h2>Dashboard Insights</h2>
+        <p>Track your sales, view product statistics, and see your rank among fellow artisans.</p>
+        <a href="dashboard.html" class="btn">Go to Dashboard</a>
+      </div>
+      <div class="feature">
+        <h2>Events for Collaboration</h2>
+        <p>Create or join events to collaborate with other artisans and grow together.</p>
+        <a href="events.html" class="btn">Explore Events</a>
+      </div>
+    </section>
+    
+    
+  </section>
+  <div class="about-container">
+    <div class="about-text-container">
+      <p class="before-about-text">About Human Welfare Association Varanasi </p>
+      <strong class="about-text-title">
+        WHAT IN OUR PRODUCT MAKE YOU SATISFIED
+      </strong>
+      <p class="about-text-description">
+        Whenever we talk about something traditional, we talk about the
+        sense of royalty and class associated with it. It is one&#x2019;s
+        own tradition that defines their root identity and separates one
+        from the others in the room. It defines our personalities...
+      </p>
+      <p class="about-text-description" id="full-description" style="display: none;">
+        Our handcrafted products represent the rich cultural heritage of Varanasi. The Human Welfare Association works tirelessly
+        to empower rural artisans, providing them with a platform to showcase their skills and sustain their livelihoods.
+        From the vibrant Banarasi sarees to intricate wooden carvings, every product tells a unique story of tradition, skill,
+        and dedication. By choosing our products, you not only embrace the finest craftsmanship but also contribute to a
+        sustainable ecosystem that uplifts artisans and promotes India's rich cultural heritage.
+    </p>
+    <a class="about-button" id="read-more-btn">
+      Read More <i class="fa-solid fa-right-long"></i>
+  </a>
+    </div>
+    <div class="about-img-container">
+      <img src="./assets/images/about.jpg" alt="About"/>
+    </div>
+  </div>
+
+
+  <!-- Categories Section -->
+  
+
+  <!-- Footer -->
+  <footer>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const readMoreBtn = document.getElementById('read-more-btn');
+    const fullDescription = document.getElementById('full-description');
+    const shortDescription = document.getElementById('short-description');
+
+    readMoreBtn.addEventListener('click', () => {
+        if (fullDescription.style.display === 'none') {
+            // Show the full description
+            fullDescription.style.display = 'block';
+            shortDescription.style.display = 'none';
+            readMoreBtn.innerHTML = 'Read Less <i class="fa-solid fa-left-long"></i>';
+        } else {
+            // Hide the full description
+            fullDescription.style.display = 'none';
+            shortDescription.style.display = 'block';
+            readMoreBtn.innerHTML = 'Read More <i class="fa-solid fa-right-long"></i>';
+        }
+    });
+});
+
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Footer Section 1: Quick Links -->
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About Us</a></li>
+       <li> <a href="register.html">Register</a> </li>
+        <li> <a href="dashboard.html">Dashboard</a></li> 
+         <li> <a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Footer Section 2: Customer Support -->
+    <div class="footer-column">
+      <h3>Customer Support</h3>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Returns & Refunds</a></li>
+        <li><a href="#">Shipping Information</a></li>
+        <li><a href="#">Order Tracking</a></li>
+      </ul>
+    </div>
+
+    <!-- Footer Section 3: Newsletter -->
+    <div class="footer-column">
+      <h3>Subscribe to our Newsletter</h3>
+      <p>Get updates on exclusive deals and new arrivals.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- Footer Section 4: Social Media -->
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#" target="_blank"><img src="C:\Users\HP\Downloads\project updated (2)\project updated\project2f\project2\project1\assets\images\facebook.png"alt="Facebook"></a>
+        <a href="#" target="_blank"><img src="C:\Users\HP\Downloads\project updated (2)\project updated\project2f\project2\project1\assets\images\insta.jpeg" alt="Instagram"></a>
+        <a href="#" target="_blank"><img src="C:\Users\HP\Downloads\project updated (2)\project updated\project2f\project2\project1\assets\images\twitter.png" alt="Twitter"></a>
+        <a href="#" target="_blank"><img src="C:\Users\HP\Downloads\project updated (2)\project updated\project2f\project2\project1\assets\images\youtube.png" alt="YouTube"></a>
+      </div>
+    </div>
+  </div>
+</footer>
