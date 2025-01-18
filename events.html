@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <h1>VaranasiVibes Events</h1>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="register.html">Join Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Create Event Form Section -->
+    <section id="create-event">
+      <div class="container create-event-container">
+        <div class="logo">
+          <img src="./assets/images/logo.png" alt="VaranasiVibes Logo">
+        </div>
+        <div class="create-event-content">
+          <h2>Create Your Event</h2>
+          <form id="create-event-form">
+            <label for="event-name">Event Name:</label>
+            <input type="text" id="event-name" placeholder="Enter event name" required>
+            
+            <label for="event-date">Date:</label>
+            <input type="date" id="event-date" required>
+            
+            <button type="button" onclick="createEvent()">Create Event</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section id="events-section">
+      <div class="container">
+        <h2>Upcoming Events</h2>
+        <div class="event-list">
+          <!-- Event 1 -->
+          <div class="event-card">
+            <h3>Handloom Workshop</h3>
+            <p><strong>Date:</strong> 25th November 2024</p>
+            <p><strong>Location:</strong> Varanasi Cultural Center</p>
+            <p><strong>Description:</strong> A collaborative workshop for artisans to learn advanced handloom techniques.</p>
+            <button>Join Event</button>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="event-card">
+            <h3>Pottery Making Meetup</h3>
+            <p><strong>Date:</strong> 30th November 2024</p>
+            <p><strong>Location:</strong> Banaras Art Studio</p>
+            <p><strong>Description:</strong> Network with fellow artisans and share your pottery-making expertise.</p>
+            <button>Join Event</button>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="event-card">
+            <h3>Artisan Networking Fair</h3>
+            <p><strong>Date:</strong> 10th December 2024</p>
+            <p><strong>Location:</strong> Community Hall</p>
+            <p><strong>Description:</strong> A platform for artisans to collaborate and exhibit their crafts.</p>
+            <button>Join Event</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Follow us on:
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a> | 
+        <a href="#">Twitter</a>
+      </p>
+    </div>
+  </footer>
+  
+</body>
+</html>
