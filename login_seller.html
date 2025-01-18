@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="login-section">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="login-form">
+        <!-- Select Role -->
+        <label for="role">Select your role:</label>
+        <select id="role" name="role" required>
+          <option value="">--Select Role--</option>
+          <option value="seller">Seller</option>
+          <option value="customer">Customer</option>
+        </select>
+
+        <!-- Email Input -->
+        <label for="email">Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Enter your email" 
+          required
+        >
+
+        <!-- Password Input -->
+        <label for="password">Password:</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          placeholder="Enter your password" 
+          required
+        >
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript for handling form submission and redirect
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevents the default form submission
+
+      // Get the email, password, and role values
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const role = document.getElementById('role').value;
+
+      // Validate the fields
+      if (email && password && role) {
+        // Redirect to the home page (index.html) based on the role
+        if (role === 'seller') {
+          window.location.href = "seller_dashboard.html"; // Redirect to seller dashboard
+        } else if (role === 'customer') {
+          window.location.href = "index.html"; // Redirect to home page
+        }
+      } else {
+        alert("Please fill in all fields and select a role.");
+      }
+    });
+  </script>
+</body>
+</html>
